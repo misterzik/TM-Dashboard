@@ -1,0 +1,13 @@
+public/app/closures.js
+node_modules/*
+
+*DS_Store
+**/.DS_Store
+**/**/.DS_Store
+
+.sass-cache/*
+assets/scss/**
+npm-debug.log
+
+config.rb
+Gruntfile.js

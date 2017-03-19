@@ -1,0 +1,93 @@
+<div class="container">
+	<div class="col-md-12">
+		<div class="insanenBox">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6091911878727341" data-ad-slot="9772277318"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</div>
+		<div class="container">
+			<div class="col-md-8">
+				<h1>
+				Core Variable Libraries
+				</h1>
+				<hr />
+				<a ui-sref="variables()" class="btn btn-xs btn-danger">
+					Grid View <span class="glyphicon glyphicon-th-large"></span>
+				</a>
+				<a ui-sref="variables-more()" class="btn btn-xs btn-danger disabled">
+					Table View <span class="glyphicon glyphicon-th-list"></span>
+				</a>
+				<div class="_searchContainer">
+					<div class="form-group">
+						<input type="text" class="form-control search" id="pwd" placeholder="Search for a File!" ng-model="tagSearch">
+					</div>
+				</div>
+				<hr />
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-9">
+					<div ng-repeat="item in variables | filter:tagSearch">
+						<div class="col-md-12">
+							<div class="_is_tagContainerXY" id="{{ item.variableId }}">
+								<h1 class="col-md-3">
+								<span class="glyphicon glyphicon-info-sign" style="font-size: 3em;"></span>
+								</h1>
+								<span class="_is_tag_title">
+									Variable Name: {{ item.name }}
+								</span><br />
+								<span class="_is_tag_title">
+									Variable Type: {{ item.type }}
+								</span><br />
+								<span class="_is_tag_title">
+									Variable Source Code:
+								</span><br />
+								<button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#s{{ item.variableId }}">
+								Show Source <span class="glyphicon glyphicon-zoom-in"></span>
+								</button>
+								<!-- Modal -->
+								<div class="modal fade" id="s{{ item.variableId }}" role="dialog">
+									<div class="modal-dialog">
+										
+										<!-- Modal content-->
+										<div class="modal-content">
+											<div class="modal-header variablesModalHeader">
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+												<h4 class="modal-title"><img src="./dealerx.png" width="70px"> Global Variable Lookup - {{ item.variableId }} - {{ item.name }} </h4>
+											</div>
+											<div class="modal-body variablesModal">
+												<span ng-repeat="params in item.parameter">
+													<div class="codeValue">
+														<code>
+														{{ params.value }}
+														</code>
+													</div>
+													Template Type: {{ params.type }}
+												</span>
+											</div>
+											<div class="modal-footer variablesFooterModal">
+												<button type="button" class="btn btn-xs btn-danger" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Modal -->
+								<hr />
+								<span class="_left"><span class="_is_tag_title">Account ID:</span> {{ item.accountId }} </span>
+								<span class="_right"><span class="_is_tag_title">Container ID:</span> {{ item.containerId }} </span><br />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 hidden-xs">
+					<div class="sidebarX">
+						<span class="sidebarMenu" ng-repeat="item in variables">
+							<span class="glyphicon glyphicon-inbox"></span>&nbsp;
+							<a ui-sref="variables-more({name: 'variables-more', '#': {{ item.variableId }} })"> {{ item.name }} </a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>

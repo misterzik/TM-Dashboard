@@ -1,0 +1,40 @@
+<div class="logged-in">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="_is_logged">
+				Succesfully Logged {{gdata.getUser().name}}
+			</div>
+			<div class="co-lg-12 container">
+				<div class="col-md-4">
+					<a ui-sref="containers()"><img src="assets/images/tag_manager.png" alt="" class="tmIMG _is_opacity img-circle" ng-mouseenter="hover = true" ng-mouseleave="hover = false" ng-class="{_is_not_opacity: hover}"></a>
+				</div>
+				<div class="col-md-4">
+					<a ui-sref="variables()"><img src="assets/images/variable.png" alt="" class="czIMG _is_opacity img-circle" ng-mouseenter="hoverx = true" ng-mouseleave="hoverx = false" ng-class="{_is_not_opacity: hoverx}"></a>
+				</div>
+				<div class="col-md-4">
+					<a ui-sref="tags()"><img src="assets/images/tag.png" alt="" class="bqIMG _is_opacity img-circle" ng-mouseenter="hovery = true" ng-mouseleave="hovery = false" ng-class="{_is_not_opacity: hovery}"></a>
+				</div>
+			</div>
+			<div class="hidden-xs co-lg-12 container">
+				<div class="col-md-4">
+					<a ui-sref="containers()" class="homeSelection"><h3 class="_is_opacity"
+						ng-mouseenter="hovery = true"
+						ng-mouseleave="hovery = false"
+					ng-class="{_is_not_opacity: hover}">TM Containers</h3></a>
+				</div>
+				<div class="col-md-4">
+					<a ui-sref="containers()" class="homeSelection"><h3 style="text-align: left;margin-left: 4rem;"
+						class="_is_opacity"
+					ng-class="{_is_not_opacity: hoverx}">TM Variables</h3></a>
+				</div>
+				<div class="col-md-4">
+					<a ui-sref="containers()" class="homeSelection"><h3 style="text-align: left;margin-left: 5rem;"
+						class="_is_opacity"
+						ng-mouseenter="hovery = true"
+						ng-mouseleave="hovery = false"
+					ng-class="{_is_not_opacity: hovery}">TM Tags</h3></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

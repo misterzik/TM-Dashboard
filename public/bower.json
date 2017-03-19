@@ -1,0 +1,14 @@
+{
+  "name": "Tag-Manager-Dashboard",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "MisterZik <nickjrod@gmail.com>"
+  ],
+  "description": "Angular-Interface-Experience also Known as Angie, Allows you to connect to Google Api Endpoints.",
+  "main": "index.html",
+  "dependencies": {
+    "angular-google-gapi": "~v1.0.0-beta.1",
+    "angular-ui-router": "~0.2.15"
+  }
+}

@@ -1,0 +1,103 @@
+<div ng-controller="angie-goapi.controller.containers.expand">
+	<div class="insanenBox">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6091911878727341" data-ad-slot="9772277318"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+	</div>
+	<div class="col-md-12">
+		<hr />
+		<h1>ContainerID: {{id}} - {{ taggin.name }} |
+		<a ng-href="https://tagmanager.google.com/#/container/accounts/{{taggin.accountId}}/containers/{{taggin.containerId}}/" target="_blank" class="btn btn-xs btn-warning">{{ taggin.name }}</a></h1>
+		<hr />
+		<div class="col-md-8">
+			<div class="_is_tagContainer right" id="">
+				<div ng-show="taggin">
+					<div class="accountInfoHolder">
+						<span class="_is_tag_title">accountId:</span>
+						{{ taggin.accountId }}
+						
+						<span class="_is_tag_title">fingerprint:</span>
+						{{ taggin.fingerprint }}
+					</div>
+					<hr />
+					
+					<div class="col-md-12">
+						<div class="col-md-6">
+							<div class="gtmIMG">
+								{{ taggin.publicId }}
+							</div>
+							<hr/>
+						</div>
+						<span class="_is_tag_title">Name:</span>
+						{{ taggin.name }}
+						<br />
+						<span class="_is_tag_title">Domain Name:</span>
+						<a ng-href="{{ taggin.domainName }}" target="_blank">
+							{{ taggin.domainName[0] }}
+						</a>
+						<br />
+						<span class="_is_tag_title">Usage Context:</span>
+						{{ taggin.usageContext[0] }}
+						<hr />
+					</div>
+					
+					<div class="accountTimeZone">
+						<span class="_is_tag_title">Time Zone Country Id:</span> {{ taggin.timeZoneCountryId }}
+						<span class="_is_tag_title">Time Zone Id:</span> {{ taggin.timeZoneId }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="_is_tagContainer right" id="">
+				<h5>ADMIN MANIFESTO</h5>
+				<div ng-repeat="item in taggins">
+					{{ item.tagId }}) <a data-toggle="collapse" data-target="#x{{ item.tagId }}">{{ item.name }}</a>
+					<button ng-click="removeTag(item.tagId)" class="btn btn-danger btn-xs">Delete {{item.tagId}}</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<hr />
+			<div class="col-md-6" ng-repeat="item in taggins">
+				<div id="{{ item.tagId }}">
+					<div class="panel panel-primary">
+						<div class="panel-heading" data-toggle="collapse" data-target="#x{{ item.tagId }}">{{ item.name }} - {{ item.tagId }} - {{ item.type }}</div>
+						<div class="collapse panel-body" id="x{{ item.tagId }}">
+							<div ng-repeat="params in item.parameter">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="codeValueY">
+											<span ng-bind="params.value"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				
+				<hr />
+				<table style="width:100%" class="table table-bordered">
+					<tr class="tableRowHeader">
+						<th style="width:30%" ng-click="orderByMe('containerId')">Env ID </th>
+						<th style="width:30%" ng-click="orderByMe('name')">TYPE</th>
+						<th style="width:40%" ng-click="orderByMe('name')">NAME</th>
+						<!--<th ng-click="orderByMe('domainName')">Domain Name</th>-->
+					</tr>
+					<tr ng-repeat="ix in envi">
+						<td>{{ ix.environmentId }}</td>
+						<td>{{ ix.type }}</td>
+						<td>{{ ix.name }}</td>
+						<!--<td><a ng-href="{{ item.domainName[0] }}" target="_blank">{{ item.domainName[0] }}</a></td>-->
+					</tr>
+					<tr><td style="font-weight:bold;background: #d2d2d2;color: #000;">Latest Versioning </td> <td style="font-weight:bold;background: red;color: #000;">{{ name.containerVersionId }}</td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

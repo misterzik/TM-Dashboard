@@ -1,0 +1,12 @@
+# MisterZik // github.com/misterzik
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  
+  # RewriteBase /Tag-Manager-Dashboard/
+  
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  RewriteRule ^ index.html [L]
+</IfModule>

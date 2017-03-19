@@ -1,0 +1,36 @@
+{
+  "name": "Tag-Manager-Dashboard",
+  "version": "1.0.0",
+  "description": "Angular-Interface-Experience also Known as AngIE, Allows you to connect to Google Api Endpoints.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf www/* && webpack -p",
+    "devserver": "webpack-dev-server --port 9100 --progress --colors",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterzik/TM-Dashboard.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angular",
+    "google-api"
+  ],
+  "author": "MisterZik <nickjrod@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/misterzik/TM-Dashboard/issues"
+  },
+  "homepage": "https://github.com/misterzik/TM-Dashboard#readme",
+  "devDependencies": {
+    "grunt-browser-sync": "^2.2.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

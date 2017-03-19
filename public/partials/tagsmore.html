@@ -1,0 +1,21 @@
+<h1>Tags </h1>
+<hr />
+<div class="col-md-12">
+	<h1 style="float:left;">Core:</h1>
+</div>
+<div ng-controller="angie-goapi.controller.tagsmore">
+	<div ng-show="staggins">
+		{{ test }}
+
+		<div class="col-md-10">
+			<div class="_is_tagContainer">
+				<span class="_is_tag_title">Account Name</span>: {{ staggins.name }}<br />
+				<span class="_is_tag_title">Account Id</span>: {{ accountId }} <br />
+				<span class="_is_tag_title">Container Id</span>: {{ item.containerId }}<br />
+				<span class="_is_tag_title">Tag Id</span>: {{ item.tagId }}<br />
+				<span class="_is_tag_title">Tag Type</span>: {{ item.type }}<br />
+				<span class="_is_tag_title">Parameters</span>:
+			</div>
+		</div>
+	</div>
+</div>

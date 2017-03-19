@@ -1,0 +1,46 @@
+<div ng-controller="angie-goapi.controller.containers">
+    <div class="col-md-12">
+        <div class="insanenBox">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6091911878727341" data-ad-slot="9772277318"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="container">
+            <h1>Containers Grid Warehouse</h1>
+            <a ui-sref="containers()" class="btn btn-xs btn-danger">
+                Table View <span class="glyphicon glyphicon-th-list"></span>
+            </a>
+            <a ui-sref="containers-more()" class="disabled btn btn-xs btn-danger">
+                Grid View <span class="glyphicon glyphicon-th-large"></span>
+            </a>
+        </div>
+        <hr />
+        <div class="col-md-12">
+            <div ng-repeat="item in taggin | filter:tagSearch | startFrom:currentPage*pageSize | limitTo:pageSize">
+                <div class="col-md-3">
+                    <div class="_is_tagContainer" id="{{ item.containerId }}">
+                        <img src="../assets/images/upc.png" class="_upc">
+                        <br />
+                        <a ui-sref="containersid({containerId: item.containerId})" class="_upcTitle">{{ item.containerId }}</a>
+                        <br />
+                        <span class="_is_tag_title">Account Name</span>: <br />{{ item.name }}
+                        <hr>
+                        <span class="_is_tag_title">TAG</span>: <a ng-href="https://tagmanager.google.com/#/container/accounts/{{item.accountId}}/containers/{{item.containerId}}/" target="_blank">Open Container</a><br />
+                        <span class="_is_tag_title">External URL</span>: <br /><a ng-href="{{ item.domainName[0] }}" target="_blank">{{ item.domainName[0] }}</a><br />
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-12 _pagination">
+                <button class="btn btn-sm btn-warning" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                Previous
+                </button> {{ currentPage+1 }} / {{ numberOfPages() }}
+                <button class="btn btn-sm btn-warning" ng-disabled="currentPage >= taggin.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                Next
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
